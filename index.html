@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: #f3f3f3;
+        }
+        .header {
+            background-color: #4CAF50;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .header .search-bar {
+            flex-grow: 1;
+            margin: 0 70px;
+            position: relative;
+        }
+        .header .search-bar input {
+            width: 100%;
+            padding: 10px 50px 10px 10px;
+            border: none;
+            border-radius: 25px;
+            transition: box-shadow 0.3s;
+        }
+        .header .search-bar input:focus {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .header .search-bar button {
+            position: absolute;
+            right: 0%;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #388E3C;
+            border: none;
+            padding: 0 9px;
+            height: 30px;
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .header .search-bar button:hover {
+            background-color: #2E7D32;
+        }
+        .header .icons {
+            display: flex;
+            gap: 20px;
+        }
+        .header .icons a {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .header .icons a:hover {
+            color: #FFEB3B;
+        }
+        .header .categories {
+            display: flex;
+            gap: 15px;
+            padding: 10px 20px;
+            background-color: #66BB6A;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header .categories a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 15px;
+            border-radius: 25px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .header .categories a:hover {
+            background-color: #388E3C;
+            transform: scale(1.05);
+        }
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            min-height: calc(100vh - 120px); /* Adjusting for header height */
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .product-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .product-card img {
+            width: 100%;
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+        .product-card img:hover {
+            transform: scale(1.05);
+        }
+        .product-card h2 {
+            color: #4CAF50;
+            margin: 15px 0;
+            font-size: 22px;
+        }
+        .product-card p {
+            color: #757575;
+            margin: 15px 0;
+            font-size: 16px;
+        }
+        .product-card .price {
+            color: #388E3C;
+            font-size: 20px;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+        .product-card button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .product-card button:hover {
+            background-color: #388E3C;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">فروشگاه اکینچی</div>
+        <div class="search-bar">
+            <input type="text" placeholder="جستجوی محصولات...">
+            <button>🔍</button>
+        </div>
+        <div class="icons">
+            <a href="sabadkharid.html">🛒 سبد خرید</a>
+            
+            <a href="#">⭐ پیشنهادات ویژه</a>
+        </div>
+    </div>
+    <div class="header categories">
+        <a href="#">سبزیجات برگ‌دار</a>
+        <a href="#">سبزیجات ریشه‌ای</a>
+        <a href="#">ادویه‌جات تازه</a>
+        <a href="#">محصولات ارگانیک</a>
+        <a href="#">تازه‌ها</a>
+    </div>
+    <div class="main">
+        <div class="product-card">
+            <img src="https://th.bing.com/th/id/R.230e623773469e7819187085696a8261?rik=Q7ApJI%2bCEF6m6A&pid=ImgRaw&r=0" alt="سبزی خوردن">
+            <h2>سبزی خوردن</h2>
+            <p>مجموعه‌ای از سبزیجات تازه و خوشمزه برای خوردن همراه با غذا.</p>
+            <div class="price">20,000 تومان</div>
+            <button onclick="addToCart('سبزی خوردن', 20000, 'https://th.bing.com/th/id/R.230e623773469e7819187085696a8261?rik=Q7ApJI%2bCEF6m6A&pid=ImgRaw&r=0')">افزودن به سبد خرید</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/350" alt="سبزی خوردن">
+            <h2>سبزی خوردن</h2>
+            <p>مجموعه‌ای از سبزیجات تازه و خوشمزه برای خوردن همراه با غذا.</p>
+            <div class="price">40,000 تومان</div>
+            <button onclick="addToCart('سبزی خوردن', 40000, 'https://via.placeholder.com/350')">افزودن به سبد خرید</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/350" alt="سبزی خوردن">
+            <h2>سبزی خوردن</h2>
+            <p>مجموعه‌ای از سبزیجات تازه و خوشمزه برای خوردن همراه با غذا.</p>
+            <div class="price">40,000 تومان</div>
+            <button onclick="addToCart('سبزی خوردن', 40000, 'https://via.placeholder.com/350')">افزودن به سبد خرید</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/350" alt="سبزی خوردن">
+            <h2>سبزی خوردن</h2>
+            <p>مجموعه‌ای از سبزیجات تازه و خوشمزه برای خوردن همراه با غذا.</p>
+            <div class="price">40,000 تومان</div>
+            <button onclick="addToCart('سبزی خوردن', 40000, 'https://via.placeholder.com/350')">افزودن به سبد خرید</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/350" alt="سبزی خوردن">
+            <h2>سبزی خوردن</h2>
+            <p>مجموعه‌ای از سبزیجات تازه و خوشمزه برای خوردن همراه با غذا.</p>
+            <div class="price">40,000 تومان</div>
+            <button onclick="addToCart('سبزی خوردن', 40000, 'https://via.placeholder.com/350')">افزودن به سبد خرید</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/350" alt="سبزی خوردن">
+            <h2>سبزی خوردن</h2>
+            <p>مجموعه‌ای از سبزیجات تازه و خوشمزه برای خوردن همراه با غذا.</p>
+            <div class="price">40,000 تومان</div>
+            <button onclick="addToCart('سبزی خوردن', 40000, 'https://via.placeholder.com/350')">افزودن به سبد خرید</button>
+        </div>
+    </div>
+    <script>
+        function addToCart(name, price, imgSrc) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const product = { name, price, imgSrc };
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('محصول به سبد خرید اضافه شد!');
+        }
+    </script>
+</body>
+</html>
